@@ -4,6 +4,7 @@
 # IntelliJ
 .idea/*
 *.iml
+keys.js
 
 # Compiled output
 *.class
