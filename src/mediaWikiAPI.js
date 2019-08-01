@@ -41,14 +41,14 @@
 //
 // document.body.appendChild(scriptTag); // Add the script tag to the document
 
-/*THIS PROVIDES TITLES AND SNIPPETS*/
+/*THIS PROVIDES FIRST TEN TITLES AND SNIPPETS*/
 
 $.ajax({
     url: '//en.wikipedia.org/w/api.php',
     data: {
         action: 'query',
         list: 'search',
-        srsearch: 'Richard Feynman',
+        srsearch: 'Batman and robin',
         format: 'json',
         formatversion: 2
     },
