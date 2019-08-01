@@ -8,23 +8,22 @@ const searchFunc = $('#searchGames').click(function () {
         dataType: 'jsonp',
         crossDomain: true,
         jsonp: 'json_callback',
-        url: 'http://www.giantbomb.com/api/search/?format=jsonp&api_key='+giantBombKey+'&query='+search
-    }).then(function(data) {
-        console.log(data.results[0].guid);
-        gameGuid = data.results[0].guid;
-    }).then($.ajax ({
-        type: 'GET',
-        dataType: 'jsonp',
-        crossDomain: true,
-        jsonp: 'json_callback',
-        url: 'http://www.giantbomb.com/api/game/'+gameGuid+'/?format=jsonp&api_key='+giantBombKey
+        url: 'http://www.giantbomb.com/api/search/?format=jsonp&api_key='+giantBombKey+'&query='+search+'&resources=game'
     }).done(function(data) {
         console.log(data);
-    }).fail(function() {
-        // alert("error");
-    }).always(function() {
-        // alert("complete");
-    }));
+        gameGuid = data.results[0].guid;
+        console.log(gameGuid);
+    }).then(gameInfo);
+});
+
+const gameInfo = () => $.ajax ({
+    type: 'GET',
+    dataType: 'jsonp',
+    crossDomain: true,
+    jsonp: 'json_callback',
+    url: 'http://www.giantbomb.com/api/game/'+gameGuid+'/?api_key='+giantBombKey+'&format=jsonp'
+}).done(function(data) {
+    console.log(data)
 });
 
 // $.ajax ({
