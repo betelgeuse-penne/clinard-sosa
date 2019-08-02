@@ -1,6 +1,6 @@
 package adventureGame;
 
-public class WarriorClass extends PlayerCharacter {
+public class WarriorClass extends PlayerCharacter{
 
     public WarriorClass (String className, int charaHP, int charaMP, int attackPOW) {
         super(className, charaHP, charaMP, attackPOW);

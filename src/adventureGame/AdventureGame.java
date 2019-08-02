@@ -2,7 +2,7 @@ package adventureGame;
 
 import java.util.Scanner;
 
-public class AdventureGame {
+public class AdventureGame{
     public static void main (String[] args) {
         Scanner scanner = new Scanner(System.in);
 //        System.out.println("Pick your characters class: ");
@@ -12,31 +12,20 @@ public class AdventureGame {
         PlayerCharacter warrior = new WarriorClass("Warrior", 25, 4, 6);
         Enemy wolf = new Wolf("Wolf", 12, 3);
 
-
         String charaName;
-//        int heroHP;
-//        int heroATT;
-//        int heroMP = 3;
         int fireATT = 6;
         int fireMP = 3;
         int potion;
         int totalPotions = 4;
-//        String enemy = "Wolf";
-//        int enemyHP;
-//        int enemyATT;
-//
+
         System.out.println("Are you ready to start the game?");
         String start = scanner.nextLine();
 
         if (start.equalsIgnoreCase("yes")) {
             System.out.println("Enter your character's name: ");
             charaName = scanner.nextLine();
-            System.out.println("You come across a wolf in the forest. It attacks you.");
-//            heroHP = 15;
-//            heroATT = 2;
+            System.out.printf("You come across a %s in the forest. It attacks you.", wolf.enemyName);
             potion = 10;
-//            enemyHP = 10;
-//            enemyATT = 2;
             do {
                 System.out.println("Stats: ");
                 System.out.printf("--  %-6s-- | -- %-5s--\n", charaName, wolf.enemyName);

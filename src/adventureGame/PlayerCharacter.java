@@ -1,6 +1,6 @@
 package adventureGame;
 
-abstract class PlayerCharacter {
+abstract class PlayerCharacter{
     protected String className;
     protected int charaHP;
     protected int charaMP;
