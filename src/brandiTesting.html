@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TESTING</title>
+</head>
+<body>
+    <div>
+        <h1>Wikipedia Search</h1>
+        <input type="text" id="searchTerm"/>
+        <button id="wikiSearch" class="btn">Submit</button>
+    </div>
+    <div id="wikiOutput"></div>
+
+    <div>
+        <h1>YouTube Search</h1>
+        <form action="#">
+            <input type="text" id="search" class="form-control"/>
+            <input type="submit" value="Search" class="form-control"/>
+        </form>
+            <div id="results"></div>
+    </div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src = "mediaWikiAPI.js"></script>
+<script src="youTubeAPI.js"></script>
+<script src="https://apis.google.com/js/client.js?onload=init"></script>
+</body>
+</html>
