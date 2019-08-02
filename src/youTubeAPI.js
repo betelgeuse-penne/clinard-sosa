@@ -46,7 +46,7 @@ $(function(){
                    // console.log(item);
                    // $("#results").append(item.id.videoId+" "+item.snippet.title+"</br>");
                         $.get("item.html", function(data){
-                              $("#results").append(tplawesome(data, [{"title": item.snippet.title, "videoid" :item.id.videoId}]));
+                              $("#results").append(tplawesome(data, [{"title": item.snippet.title, "videoId" :item.id.videoId}]));
                         });
                   });
             });
