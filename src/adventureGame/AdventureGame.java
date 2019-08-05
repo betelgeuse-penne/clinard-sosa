@@ -9,7 +9,7 @@ public class AdventureGame{
 //        String charaClass = scanner.nextLine();
 //        System.out.printf("You picked: %s", charaClass);
 
-        PlayerCharacter warrior = new WarriorClass("Warrior", 25, 4, 6);
+        PlayerCharacter warrior = new WarriorClass("Warrior", 25, 0, 4);
         Enemy wolf = new Wolf("Wolf", 12, 3);
 
         String charaName;
@@ -24,28 +24,31 @@ public class AdventureGame{
         if (start.equalsIgnoreCase("yes")) {
             System.out.println("Enter your character's name: ");
             charaName = scanner.nextLine();
-            System.out.printf("You come across a %s in the forest. It attacks you.", wolf.enemyName);
+            System.out.println(wolf.appears());
             potion = 10;
             do {
                 System.out.println("Stats: ");
                 System.out.printf("--  %-6s-- | -- %-5s--\n", charaName, wolf.enemyName);
                 System.out.printf("HP: %d MP: %d | Enemy HP: %-5d\n\n", warrior.charaHP, warrior.charaMP, wolf.enemyHP);
                 System.out.println("Actions: ");
-                System.out.printf("Attack || Drink Potion(%d) || Fire Magic(%dMP)|| Run\n", totalPotions, fireMP);
+                System.out.printf("Attack || Drink Potion(%d) || Magic(%dMP)|| Run\n", totalPotions, fireMP);
                 String action = scanner.nextLine();
                 if (action.equalsIgnoreCase("attack")) {
                     System.out.println(warrior.attack());
+                    System.out.println(wolf.attack());
                     wolf.enemyHP -= warrior.attackPOW;
                     warrior.charaHP -= wolf.enemyATT;
                 } else if (action.toLowerCase().contains("potion")) {
                     System.out.println(warrior.drinkPotion());
+                    System.out.println(wolf.attack());
                     warrior.charaHP += potion;
                     totalPotions --;
                     warrior.charaHP -= wolf.enemyATT;
                 } else if (warrior.charaMP==0 && action.toLowerCase().contains("fire")) {
-                    System.out.println("You ran out of MP! Try something else!");
+                    System.out.println(warrior.magicATT());
                 } else if (action.toLowerCase().contains("fire")) {
-                    System.out.println("You set it ablaze!\n");
+                    System.out.println("You set it ablaze!");
+                    System.out.println(wolf.attack());
                     wolf.enemyHP -= fireATT;
                     warrior.charaHP -= wolf.enemyATT;
                     warrior.charaMP -= fireMP;

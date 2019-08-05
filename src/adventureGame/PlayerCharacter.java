@@ -14,6 +14,7 @@ abstract class PlayerCharacter{
     }
 
     public abstract String attack();
+    public abstract String magicATT();
     public abstract String drinkPotion();
 
 }

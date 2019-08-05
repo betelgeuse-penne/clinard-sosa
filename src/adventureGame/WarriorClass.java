@@ -7,7 +7,11 @@ public class WarriorClass extends PlayerCharacter{
     }
 
     @Override
-    public String attack() { return "You swung your sword!\n"; }
+    public String attack() { return "You swung your sword!"; }
+
     @Override
-    public String drinkPotion() { return "You recovered 10HP!\n"; }
+    public String magicATT() { return "Warriors can't use magic, try something else!"; }
+
+    @Override
+    public String drinkPotion() { return "You recovered 10HP!"; }
 }
