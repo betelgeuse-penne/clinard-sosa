@@ -10,6 +10,7 @@ public class AdventureGame{
 //        System.out.printf("You picked: %s", charaClass);
 
         PlayerCharacter warrior = new WarriorClass("Warrior", 25, 0, 4);
+        PlayerCharacter ranger = new RangerClass("Ranger", 25, 0, 4);
         Enemy enemy = new Wolf("wolff", 3, 4);
 
         int randomEnemy = (int) Math.ceil(Math.random()*50);
