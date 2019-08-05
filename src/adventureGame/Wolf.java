@@ -7,5 +7,8 @@ public class Wolf extends Enemy {
     }
 
     @Override
+    public String appears() { return "A wolf attacks you as you wander through a forest!"; }
+
+    @Override
     public String attack() { return "The wolf attacked with it's claws!"; }
 }

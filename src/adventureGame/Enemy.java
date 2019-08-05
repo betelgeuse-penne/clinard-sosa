@@ -11,5 +11,6 @@ abstract class Enemy {
         this.enemyATT = enemyATT;
     }
 
+    public abstract String appears();
     public abstract String attack();
 }
