@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Front page</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <style>
+        html, body, pre, code, kbd, samp {
+            font-family: "Press Start 2P",sans-serif;
+        }
+        .container{
+            margin: 3rem;
+        }
+        #heading {
+            text-align: center;
+            font-size: 2em;
+        }
+        .banner {
+            height: 180px;
+            width: auto;
+            background-image: url("GameBanner.png");
+            /*background-repeat: no-repeat;*/
+            background-size: contain;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div>
+    <div class="banner"></div>
+
+    <nav class="navbar is-success" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://bulma.io">
+                Logo<img src="put a logo here" width="112" height="28">
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">Home</a>
+                <a class="navbar-item">Games</a>
+                <a class="navbar-item">About</a>
+                <a class="navbar-item">Contact</a>
+                <a class="navbar-item">Report an issue</a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="nes-btn is-primary">Sign up</a>
+                        <a class="nes-btn is-primary">Log in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="container">
+    <p id="heading">Welcome to >Insert Name here< !</p>
+    <p>Create your own list to keep track of your games. Personalize and organize your list to track titles you have completed, your current progress, what you plan on playing in the future, and more.</p>
+    <br>
+    <div class="columns">
+        <div class="column is-three-quarters">is-three-quarters</div>
+        <div class="column">Auto sized</div>
+    </div>
+</div>
+
+<script src="js/keys.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+<script src="js/landingPage-js.js"></script>
+</body>
+</html>
