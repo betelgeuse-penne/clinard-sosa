@@ -5,7 +5,7 @@ Date.prototype.today = function () {
 };
 
 let newDate = new Date();
-let date =newDate.today();
+let date = newDate.today();
 
 // console.log(date);
 
@@ -14,7 +14,15 @@ $.ajax ({
     dataType: 'jsonp',
     crossDomain: true,
     jsonp: 'json_callback',
-    url: 'https://www.giantbomb.com/api/releases/?api_key='+giantBombKey+'&format=jsonp&sort=release_date:desc&filter=region:1&filter=release_date:1950-01-01|'+date+''
+    url: 'https://www.giantbomb.com/api/releases/?api_key='+giantBombKey+'&format=jsonp&sort=release_date:desc&filter=region:1&filter=release_date:1950-01-01|'+date+'&limit=10'
 }).done(function(data) {
     console.log(data);
+
+    $('#displayReleases').html('');
+    let html = '';
+    for (let i = 0; i <= data.results.length-1; i++) {
+        html += `<p>${i+1} ${data.results[i].name} (${data.results[i].platform.name}) \n</p>`
+    }
+
+    $(html).appendTo('#displayReleases');
 });
