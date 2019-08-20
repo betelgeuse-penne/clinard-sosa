@@ -1,5 +1,12 @@
 "use strict";
 
+//GiantBomb id values for future use
+//  Platforms:
+//  PC: 94
+//  Switch: 157
+//  XBONE: 145
+//  PS4: 146
+
 Date.prototype.today = function () {
     return this.getFullYear() + "-" +(((this.getMonth()+1) < 10)?"0":"") + (this.getMonth()+1) +"-"+ ((this.getDate() < 10)?"0":"") + this.getDate();
 };

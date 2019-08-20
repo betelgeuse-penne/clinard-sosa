@@ -11,7 +11,7 @@
             font-family: "Press Start 2P",sans-serif;
         }
         .container{
-            margin: 3rem;
+            margin: 4rem;
         }
         #heading {
             text-align: center;
@@ -23,6 +23,10 @@
             background-image: url("GameBanner.png");
             /*background-repeat: no-repeat;*/
             background-size: contain;
+        }
+        #tabs {
+            font-size: .5em;
+            clear: left;
         }
 
     </style>
@@ -71,7 +75,7 @@
     <p>Create your own list to keep track of your games. Personalize and organize your list to track titles you have completed, your current progress, what you plan on playing in the future, and more.</p>
     <br>
     <div class="columns">
-        <div class="column is-three-quarters">
+        <div class="column is-two-thirds">
             <div id="display"></div>
         </div>
 
@@ -79,6 +83,14 @@
             <div class="card">
                 <header class="card-header">
                     <p class="card-header-title">New Releases</p>
+                    <div id="tabs" class="tabs is-toggle">
+                        <ul>
+                            <li class="is-active"><a>PC</a></li>
+                            <li><a>Switch</a></li>
+                            <li><a>PS4</a></li>
+                            <li><a>Xbox One</a></li>
+                        </ul>
+                    </div>
                 </header>
                 <div class="card-content">
                     <div class="content" id="displayReleases"></div>
