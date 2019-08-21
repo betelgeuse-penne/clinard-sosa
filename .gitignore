@@ -5,7 +5,7 @@
 .idea/*
 *.iml
 js/keys.js
-src/main/js/keys.js
+src/main/webapp/js/keys.js
 
 
 # Compiled output
