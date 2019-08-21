@@ -10,9 +10,6 @@
         html, body, pre, code, kbd, samp {
             font-family: "Press Start 2P",sans-serif;
         }
-        .container{
-            margin: 4rem;
-        }
         #heading {
             text-align: center;
             font-size: 2em;
@@ -21,12 +18,13 @@
             height: 180px;
             width: auto;
             background-image: url("GameBanner.png");
-            /*background-repeat: no-repeat;*/
             background-size: contain;
         }
         #tabs {
             font-size: .5em;
-            clear: left;
+        }
+        .hidden {
+            display: none;
         }
 
     </style>
@@ -85,15 +83,19 @@
                     <p class="card-header-title">New Releases</p>
                     <div id="tabs" class="tabs is-toggle">
                         <ul>
-                            <li class="is-active"><a>PC</a></li>
-                            <li><a>Switch</a></li>
-                            <li><a>PS4</a></li>
-                            <li><a>Xbox One</a></li>
+                            <li id="pc-tab" class="tab is-active"><a>PC</a></li>
+                            <li id="switch-tab" class="tab"><a>Switch</a></li>
+                            <li id="ps-tab" class="tab"><a>PS4</a></li>
+                            <li id="xbone-tab" class="tab"><a>Xbox One</a></li>
                         </ul>
                     </div>
                 </header>
                 <div class="card-content">
                     <div class="content" id="displayReleases"></div>
+                    <div id="pc-tab-content"><p>PCMasterRace</p></div>
+                    <div class="hidden" id="switch-tab-content">Nintendy Switch</div>
+                    <div class="hidden" id="ps-tab-content">PlayStationnn</div>
+                    <div class="hidden" id="xbone-tab-content">Xbonee</div>
                 </div>
             </div>
         </div>
