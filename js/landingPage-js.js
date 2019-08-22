@@ -15,10 +15,9 @@ let newDate = new Date();
 let date = newDate.today();
 
 $('.tab').click(function (e) {
-    let tabName = (e.currentTarget.attributes[0].nodeValue);
+    let tabName = (e.currentTarget.attributes[1].nodeValue);
     removeActive();
     hideAll();
-    console.log(tabName);
     $('#'+tabName).addClass('is-active');
     $('#' + tabName + '-content').removeClass('hidden');
 });
@@ -36,40 +35,42 @@ const hideAll = () => {
     $('#xbone-tab-content').addClass('hidden');
 };
 
-// const changeReleases = $('#switch').click(function () {
-//     $.ajax ({
-//         type: 'GET',
-//         dataType: 'jsonp',
-//         crossDomain: true,
-//         jsonp: 'json_callback',
-//         url: 'https://www.giantbomb.com/api/releases/?api_key='+giantBombKey+'&format=jsonp&sort=release_date:desc&filter=region:1&filter=release_date:1950-01-01|'+date+'&limit=10'
-//     }).done(function(data) {
-//         console.log(data);
-//
-//         $('#displayReleases').html('');
-//         let html = '';
-//         for (let i = 0; i <= data.results.length-1; i++) {
-//             html += `<p>${i+1} ${data.results[i].name} (${data.results[i].platform.name}) \n</p>`
-//         }
-//
-//         $(html).appendTo('#displayReleases');
-//     });
-// });
+const changeReleases = $('.tab').click(function () {
+    let platformID = $(this).attr("value");
+    console.log(platformID);
+    $.ajax ({
+        type: 'GET',
+        dataType: 'jsonp',
+        crossDomain: true,
+        jsonp: 'json_callback',
+        url: 'https://www.giantbomb.com/api/releases/?api_key='+giantBombKey+'&format=jsonp&sort=release_date:desc&filter=region:1,platform:'+platformID+',release_date:1950-01-01|'+date+'&limit=10'
+    }).done(function(data) {
+        console.log(data);
 
-// $.ajax ({
-//     type: 'GET',
-//     dataType: 'jsonp',
-//     crossDomain: true,
-//     jsonp: 'json_callback',
-//     url: 'https://www.giantbomb.com/api/releases/?api_key='+giantBombKey+'&format=jsonp&sort=release_date:desc&filter=region:1&filter=release_date:1950-01-01|'+date+'&limit=10'
-// }).done(function(data) {
-//     console.log(data);
-//
-//     $('#displayReleases').html('');
-//     let html = '';
-//     for (let i = 0; i <= data.results.length-1; i++) {
-//         html += `<p>${i+1} ${data.results[i].name} (${data.results[i].platform.name}) \n</p>`
-//     }
-//
-//     $(html).appendTo('#displayReleases');
-// });
+        $('#displayReleases').html('');
+        let html = '';
+        for (let i = 0; i <= data.results.length-1; i++) {
+            html += `<p>${i+1} ${data.results[i].name} (${data.results[i].platform.name}) \n</p>`
+        }
+
+        $(html).appendTo('#displayReleases');
+    });
+});
+
+$.ajax ({
+    type: 'GET',
+    dataType: 'jsonp',
+    crossDomain: true,
+    jsonp: 'json_callback',
+    url: 'https://www.giantbomb.com/api/releases/?api_key='+giantBombKey+'&format=jsonp&sort=release_date:desc&filter=region:1,platform:94,release_date:1950-01-01|'+date+'&limit=10'
+}).done(function(data) {
+    console.log(data);
+
+    $('#displayReleases').html('');
+    let html = '';
+    for (let i = 0; i <= data.results.length-1; i++) {
+        html += `<p>${i+1} ${data.results[i].name} (${data.results[i].platform.name}) \n</p>`
+    }
+
+    $(html).appendTo('#displayReleases');
+});
