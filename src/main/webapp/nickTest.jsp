@@ -54,6 +54,7 @@
     </div>
 </div>
 
-<%@include file="partials/scripts.jsp"%>
+<%@include file="partials/test_scripts.jsp"%>
+<%@include file="partials/bootstrap_scripts.jsp"%>
 </body>
 </html>
